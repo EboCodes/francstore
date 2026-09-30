@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Franc</title>
+    <title>Your Cart | Franc Collection</title>
+    <meta name="description" content="Review your Franc Collection shopping cart and proceed to checkout.">
+    <link rel="icon" type="image/png" href="img/franc.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="style.css">
    
@@ -12,7 +14,7 @@
 <body>
 
     <section id="header">
-        <a href="#"><img src="img/franc.png" class="logos" alt="logo"></a>
+        <a href="index.html"><img src="img/franc.png" class="logos" alt="Franc Collection"></a>
 
         <div>
             <ul id="navbar">
@@ -21,13 +23,13 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
-                <li id="lg-bag"><a class="active" href="cart.html"><i class="fa-solid fa-shopping-bag"></i></a></li>
-                <a href="#" id="close"><i class="fas fa-times"></i></a>
+                <li id="lg-bag"><a class="active" href="cart.html" aria-label="View cart"><i class="fa-solid fa-shopping-bag" aria-hidden="true"></i><span class="cart-count">0</span></a></li>
+                <button type="button" id="close" class="icon-btn" aria-label="Close menu"><i class="fas fa-times" aria-hidden="true"></i></button>
             </ul>
         </div>
         <div id="mobile">
-            <a href="cart.html"><i class="fa-solid fa-shopping-bag"></i></a>
-            <i id="bar" class="fas fa-outdent"></i>
+            <a href="cart.html" aria-label="View cart"><i class="fa-solid fa-shopping-bag" aria-hidden="true"></i><span class="cart-count">0</span></a>
+            <button type="button" id="bar" class="icon-btn" aria-label="Open menu"><i class="fas fa-outdent" aria-hidden="true"></i></button>
         </div>
     </section>
 
@@ -48,50 +50,20 @@
                 <td>SUBTOTAL</td>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td><a href=""><i class="fas fa-times-circle"></i></a></td>
-                <td><img src="img/products/s2.jpg" alt=""></td>
-                <td>Green Vintage One-Off Sneakers</td>
-                <td>$178.00</td>
-                <td><input type="number" value="1"></td>
-                <td>$178.00</td>
-            </tr>
-            <tr>
-                <td><a href=""><i class="fas fa-times-circle"></i></a></td>
-                <td><img src="img/products/b2.jpg" alt=""></td>
-                <td>Green Vintage One-Off Sneakers</td>
-                <td>$118.00</td>
-                <td><input type="number" value="1"></td>
-                <td>$178.00</td>
-            </tr>
-            <tr>
-                <td><a href=""><i class="fas fa-times-circle"></i></a></td>
-                <td><img src="img/products/b3.jpg" alt=""></td>
-                <td>Green Vintage One-Off Sneakers</td>
-                <td>$178.00</td>
-                <td><input type="number" value="1"></td>
-                <td>$178.00</td>
-            </tr>
-            <tr>
-                <td><a href=""><i class="fas fa-times-circle"></i></a></td>
-                <td><img src="img/products/b7.jpg" alt=""></td>
-                <td>Green Vintage One-Off Sneakers</td>
-                <td>$178.00</td>
-                <td><input type="number" value="1"></td>
-                <td>$178.00</td>
-            </tr>
+        <tbody id="cartBody">
         </tbody>
     </table>
+    <p id="cart-empty" hidden>Your cart is empty. <a href="store.html">Continue shopping</a>.</p>
    </section>
 
    <section id="cart-add" class="section-p1">
     <div id="coupon">
         <h3>Apply Coupon</h3>
         <div>
-            <input type="text" placeholder="Enter Your Coupon">
-            <button class="normal">Apply</button>
+            <input type="text" id="couponInput" placeholder="Enter Your Coupon" aria-label="Coupon code">
+            <button type="button" class="normal" id="applyCouponBtn">Apply</button>
         </div>
+        <p class="form-msg" id="couponMsg" aria-live="polite"></p>
     </div>
 
     <div id="subtotal">
@@ -99,7 +71,11 @@
         <table>
             <tr>
                 <td>Cart Subtotal</td>
-                <td>$335</td>
+                <td id="cartSubtotal">$0.00</td>
+            </tr>
+            <tr id="discountRow" hidden>
+                <td>Discount</td>
+                <td id="cartDiscount">-$0.00</td>
             </tr>
             <tr>
                 <td>Shipping</td>
@@ -107,16 +83,16 @@
             </tr>
             <tr>
                 <td><strong>Total</strong></td>
-                <td><strong>$335</strong></td>
+                <td><strong id="cartTotal">$0.00</strong></td>
             </tr>
         </table>
-        <button class="normal">Procced to checkout</button>
+        <button type="button" class="normal" id="checkoutBtn">Proceed to checkout</button>
     </div>
    </section>
 
     <footer class="section-p1">
         <div class="col">
-            <img src="img/franc.png" alt="">
+            <img src="img/franc.png" alt="Franc Collection">
             <h4>Contact</h4>
             <p><strong>Address:</strong> No9 Kasali Babaloa Street, Ogo-Oluwa, Osogbo</p>
             <p><strong>Phone:</strong> +234 81 1735 8578 / +234 90 5319 3305</p>
@@ -124,28 +100,28 @@
             <div class="follow">
                 <h4>Follow us</h4>
                 <div class="icon">
-                    <i class="fab fa-facebook-f"></i>
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-pinterest-p"></i>
-                    <i class="fab fa-youtube"></i>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
 
         <div class="col">
             <h4>About</h4>
-            <a href="#">About Us</a>
+            <a href="about.html">About Us</a>
             <a href="#">Delivery Information</a>
             <a href="#">Privacy Policy</a>
             <a href="#">Terms & Conditions</a>
-            <a href="#">Contact Us</a>
+            <a href="contact.html">Contact Us</a>
         </div>
 
         <div class="col">
             <h4>My Account</h4>
             <a href="#">Sign In</a>
-            <a href="#">View Cart</a>
+            <a href="cart.html">View Cart</a>
             <a href="#">My Wishlist</a>
             <a href="#">Track My Oders</a>
             <a href="#">Help</a>
@@ -155,11 +131,11 @@
             <h4>Install App</h4>
             <p>From Google Play Store or App Store</p>
             <div class="row">
-                <img src="img/pay/play.jpg" alt="">
-                <img src="img/pay/app.jpg" alt="">
+                <img src="img/pay/play.jpg" alt="Get it on Google Play">
+                <img src="img/pay/app.jpg" alt="Download on the App Store">
             </div>
             <p>Secured Payment Gateway</p> 
-            <img class="logo" src="img/pay/pay.png" alt="">
+            <img class="logo" src="img/pay/pay.png" alt="Accepted payment methods">
         </div>
         
         <div class="copyright">

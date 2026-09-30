@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Franc</title>
+    <title>Blog | Franc Collection</title>
+    <meta name="description" content="Fashion news, style guides and the latest trends from Franc Collection.">
+    <link rel="icon" type="image/png" href="img/franc.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="style.css">
    
@@ -12,7 +14,7 @@
 <body>
 
     <section id="header">
-        <a href="#"><img src="img/franc.png" class="logos" alt="logo"></a>
+        <a href="index.html"><img src="img/franc.png" class="logos" alt="Franc Collection"></a>
 
         <div>
             <ul id="navbar">
@@ -21,13 +23,13 @@
                 <li><a class="active" href="blog.html">Blog</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
-                <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-shopping-bag"></i></a></li>
-                <a href="#" id="close"><i class="fas fa-times"></i></a>
+                <li id="lg-bag"><a href="cart.html" aria-label="View cart"><i class="fa-solid fa-shopping-bag" aria-hidden="true"></i><span class="cart-count">0</span></a></li>
+                <button type="button" id="close" class="icon-btn" aria-label="Close menu"><i class="fas fa-times" aria-hidden="true"></i></button>
             </ul>
         </div>
         <div id="mobile">
-            <a href="cart.html"><i class="fa-solid fa-shopping-bag"></i></a>
-            <i id="bar" class="fas fa-outdent"></i>
+            <a href="cart.html" aria-label="View cart"><i class="fa-solid fa-shopping-bag" aria-hidden="true"></i><span class="cart-count">0</span></a>
+            <button type="button" id="bar" class="icon-btn" aria-label="Open menu"><i class="fas fa-outdent" aria-hidden="true"></i></button>
         </div>
     </section>
 
@@ -39,7 +41,7 @@
     <section id="blog">
         <div class="blog-box">
             <div class="blog-img">
-                <img src="img/blog/b1.jpg" alt="">
+                <img src="img/blog/b1.jpg" alt="The Open-Back-Strapless Net Blouse">
             </div>
             <div class="blog-details">
                 <h4>The Open-Back-Strapless Net Blouse</h4>
@@ -51,7 +53,7 @@
         </div>
         <div class="blog-box">
             <div class="blog-img">
-                <img src="img/blog/b2.jpg" alt="">
+                <img src="img/blog/b2.jpg" alt="The Friend's Designer Outfit">
             </div>
             <div class="blog-details">
                 <h4>The Friend's Designer Outfit</h4>
@@ -63,7 +65,7 @@
         </div>
         <div class="blog-box">
             <div class="blog-img">
-                <img src="img/blog/b3.jpg" alt="">
+                <img src="img/blog/b3.jpg" alt="Black Friday Promo Going On Currently">
             </div>
             <div class="blog-details">
                 <h4>Black Friday Promo Going On Currently</h4>
@@ -75,7 +77,7 @@
         </div>
         <div class="blog-box">
             <div class="blog-img">
-                <img src="img/blog/b4.jpg" alt="">
+                <img src="img/blog/b4.jpg" alt="The Grey Sweater Good For All Seasons">
             </div>
             <div class="blog-details">
                 <h4>The Grey Sweater Good For All Seasons</h4>
@@ -87,7 +89,7 @@
         </div>
         <div class="blog-box">
             <div class="blog-img">
-                <img src="img/blog/b5.jpg" alt="">
+                <img src="img/blog/b5.jpg" alt="Be Yourself In This Great Concept">
             </div>
             <div class="blog-details">
                 <h4>Be Yourself In This Great Concept</h4>
@@ -99,7 +101,7 @@
         </div>
         <div class="blog-box">
             <div class="blog-img">
-                <img src="img/blog/pubcover1.jpg" alt="">
+                <img src="img/blog/pubcover1.jpg" alt="The Journey Of A Successful Designer">
             </div>
             <div class="blog-details">
                 <h4>The Journey Of A Successful Designer</h4>
@@ -111,7 +113,7 @@
         </div>
         <div class="blog-box">
             <div class="blog-img">
-                <img src="img/blog/b6.jpg" alt="">
+                <img src="img/blog/b6.jpg" alt="The Secret To An Healthy Skin Free From Wrinkles">
             </div>
             <div class="blog-details">
                 <h4>The Secret To An Healthy Skin Free From Wrinkles</h4>
@@ -123,7 +125,7 @@
         </div>
         <div class="blog-box">
             <div class="blog-img">
-                <img src="img/blog/b7.jpg" alt="">
+                <img src="img/blog/b7.jpg" alt="The Strapless Net Blouse">
             </div>
             <div class="blog-details">
                 <h4>The Strapless Net Blouse</h4>
@@ -135,11 +137,11 @@
         </div>
     </section>
 
-    <section id="pagination" class="section-p1">
-        <a href="#">1</a>
+    <section id="pagination" class="section-p1" aria-label="Pagination">
+        <a href="#" aria-current="page">1</a>
         <a href="#">2</a>
         <a href="#">3</a>
-        <a href="#"><i class="fas fa-long-arrow-alt-right"></i></a>
+        <a href="#" aria-label="Next page"><i class="fas fa-long-arrow-alt-right" aria-hidden="true"></i></a>
     </section>
 
     <section id="newsletter" class="section-p1 section-m1">
@@ -147,15 +149,15 @@
             <h4>Sign Up For Newsletters</h4>
             <p>Get E-mail updates about our latest products and <span>special offers.</span></p>
         </div>
-        <div class="form">
-            <input type="text" placeholder="Your email address">
-            <button  class="normal">Sign Up</button>
-        </div>
+        <form class="form" data-newsletter-form novalidate>
+            <input type="email" placeholder="Your email address" aria-label="Email address" required>
+            <button type="submit" class="normal">Sign Up</button>
+        </form>
     </section>
 
     <footer class="section-p1">
         <div class="col">
-            <img src="img/franc.png" alt="">
+            <img src="img/franc.png" alt="Franc Collection">
             <h4>Contact</h4>
             <p><strong>Address:</strong> No9 Kasali Babaloa Street, Ogo-Oluwa, Osogbo</p>
             <p><strong>Phone:</strong> +234 81 1735 8578 / +234 90 5319 3305</p>
@@ -163,28 +165,28 @@
             <div class="follow">
                 <h4>Follow us</h4>
                 <div class="icon">
-                    <i class="fab fa-facebook-f"></i>
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-pinterest-p"></i>
-                    <i class="fab fa-youtube"></i>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
 
         <div class="col">
             <h4>About</h4>
-            <a href="#">About Us</a>
+            <a href="about.html">About Us</a>
             <a href="#">Delivery Information</a>
             <a href="#">Privacy Policy</a>
             <a href="#">Terms & Conditions</a>
-            <a href="#">Contact Us</a>
+            <a href="contact.html">Contact Us</a>
         </div>
 
         <div class="col">
             <h4>My Account</h4>
             <a href="#">Sign In</a>
-            <a href="#">View Cart</a>
+            <a href="cart.html">View Cart</a>
             <a href="#">My Wishlist</a>
             <a href="#">Track My Oders</a>
             <a href="#">Help</a>
@@ -194,11 +196,11 @@
             <h4>Install App</h4>
             <p>From Google Play Store or App Store</p>
             <div class="row">
-                <img src="img/pay/play.jpg" alt="">
-                <img src="img/pay/app.jpg" alt="">
+                <img src="img/pay/play.jpg" alt="Get it on Google Play">
+                <img src="img/pay/app.jpg" alt="Download on the App Store">
             </div>
             <p>Secured Payment Gateway</p> 
-            <img class="logo" src="img/pay/pay.png" alt="">
+            <img class="logo" src="img/pay/pay.png" alt="Accepted payment methods">
         </div>
         
         <div class="copyright">
